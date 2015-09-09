@@ -10,15 +10,15 @@
 */
 
 // Include updater-class
-if (!class_exists('Plugin_Updater')) {
-  include_once(plugin_dir_path( __FILE__ ).'plugin-updater.php');
+if (!class_exists('GitHub_Plugin_Updater')) {
+  include_once(plugin_dir_path( __FILE__ ).'github-plugin-updater.php');
 }
 
 if (!class_exists('Social_Reach')) {
   include_once(plugin_dir_path( __FILE__ ).'social-reach.php');
 }
 
-$plugin_updater = new Plugin_Updater(__FILE__);
+$plugin_updater = new GitHub_Plugin_Updater(__FILE__);
 $plugin_updater->set_username('enjikaka');
 $plugin_updater->set_repository('wp-social-reach');
 /*
