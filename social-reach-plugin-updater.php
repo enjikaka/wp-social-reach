@@ -4,6 +4,11 @@ class Social_Reach_Plugin_Updater {
 	protected $basename;
 	protected $active;
 
+	private $username;
+	private $repository;
+	private $authorize_token;
+	private $github_response;
+
 	public function __construct($file) {
 		$this->file = $file;
 
@@ -16,5 +21,17 @@ class Social_Reach_Plugin_Updater {
 		$this->plugin = get_plugin_data($this->file);
 		$this->basename = plugin_basename($this->file);;
 		$this->active = is_plugin_active($->basename);
+	}
+
+	public function set_username($username) {
+		$this->username = $username;
+	}
+
+	public function set_repository($repository) {
+		$this->repository  = $repository;
+	}
+
+	public function authorize($token) {
+		$this->authorize_token = $token;
 	}
 }
