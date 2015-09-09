@@ -1,17 +1,18 @@
 <?php
 
-class Social_Reach() {
+class Social_Reach {
 	protected $url;
 
-	public function __constructor($url) {
+	public function __construct($url) {
 		$this->url = $url;
+		return $this;
 	}
 
 	public function tweet_count() {
 		$json = file_get_contents('http://urls.api.twitter.com/1/urls/count.json?url=' . $this->url);
 		$arr = json_decode($json, true);
 
-		return intval($arr['count'])
+		return intval($arr['count']);
 	}
 
 	public function facebook_likes_count() {

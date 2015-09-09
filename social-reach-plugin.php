@@ -19,6 +19,10 @@ if (!class_exists('Social_Reach_Plugin_Updater')) {
   include_once(plugin_dir_path( __FILE__ ).'social-reach-plugin-updater.php');
 }
 
+if (!class_exists('Social_Reach')) {
+  include_once(plugin_dir_path( __FILE__ ).'social-reach.php');
+}
+
 $plugin_updater = new Social_Reach_Plugin_Updater(__FILE__);
 $plugin_updater->set_username('enjikaka');
 $plugin_updater->set_repository('wp-social-reach');
@@ -66,14 +70,16 @@ add_action('add_meta_boxes', 'social_reach_add_meta_box');
  */
 function social_reach_meta_box_callback($post) {
   // Add an nonce field so we can check for it later.
-  wp_nonce_field('social_reach_meta_box', 'social_reach_meta_box_nonce');
+  //wp_nonce_field('social_reach_meta_box', 'social_reach_meta_box_nonce');
+  //echo "Hejsan";
 
   /*
    * Use get_post_meta() to retrieve an existing value
    * from the database and use the value for the form.
-   */
-  $value = get_post_meta($post->ID, '_my_meta_value_key', true);
+   
+  $value = get_post_meta($post->ID, '_my_meta_value_key', true);*/
   echo reach_data($post->ID);
+
 }
 
 ?>
