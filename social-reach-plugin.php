@@ -4,7 +4,7 @@
   Plugin Name: WP Social Reach
   Plugin URI: https://github.com/enjikaka/wp-social-reach
   Description: Get likes and shares count from Social Networks
-  Version: 0.0.2
+  Version: 0.0.3
   Author: Jeremy Karlsson
   Author URI: http://jeremy.se
 */
