@@ -4,21 +4,21 @@
   Plugin Name: WP Social Reach
   Plugin URI: https://github.com/enjikaka/wp-social-reach
   Description: Get likes and shares count from Social Networks
-  Version: 0.0.3
+  Version: 0.0.4
   Author: Jeremy Karlsson
   Author URI: http://jeremy.se
 */
 
 // Include updater-class
-if (!class_exists('Social_Reach_Plugin_Updater')) {
-  include_once(plugin_dir_path( __FILE__ ).'social-reach-plugin-updater.php');
+if (!class_exists('Plugin_Updater')) {
+  include_once(plugin_dir_path( __FILE__ ).'plugin-updater.php');
 }
 
 if (!class_exists('Social_Reach')) {
   include_once(plugin_dir_path( __FILE__ ).'social-reach.php');
 }
 
-$plugin_updater = new Social_Reach_Plugin_Updater(__FILE__);
+$plugin_updater = new Plugin_Updater(__FILE__);
 $plugin_updater->set_username('enjikaka');
 $plugin_updater->set_repository('wp-social-reach');
 /*
@@ -46,7 +46,7 @@ function reach_data($id) {
  * Adds a box to the main column on the Post and Page edit screens.
  */
 function social_reach_add_meta_box() {
-  $screens = array( 'post', 'page' );
+  $screens = array('post', 'page');
   foreach ($screens as $screen) {
     add_meta_box(
       'social_reach_sectionid',
