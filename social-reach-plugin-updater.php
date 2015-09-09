@@ -1,5 +1,8 @@
 class Social_Reach_Plugin_Updater {
 	protected $file;
+	protected $plugin;
+	protected $basename;
+	protected $active;
 
 	public function __construct($file) {
 		$this->file = $file;
